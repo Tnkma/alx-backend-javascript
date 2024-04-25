@@ -8,6 +8,7 @@ export default function initializeRooms() {
   const rooms = [];
 
   for (const size of roomSize) {
+    // for every size in roomSize, create a new classRoom and push it to the rooms array
     rooms.push(new ClassRoom(size));
   }
   return rooms;
