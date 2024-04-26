@@ -1,5 +1,8 @@
 export default class HolbertonCourse {
   constructor(name, length, students) {
+    if (typeof name !== 'string' || typeof length !== 'number' || !Array.isArray(students)) {
+      throw new Error('Invalid input type');
+    }
     // Check if name is a string
     this._name = name;
     // Check if length is a number
@@ -41,7 +44,7 @@ export default class HolbertonCourse {
 
   // Setter for students
   set students(value) {
-    if (!Array.isArray(value) || value.some((student) => typeof student !== 'string')) {
+    if (!Array.isArray(value)) {
       throw new TypeError('Students must be an array of strings');
     }
     this._students = value;
