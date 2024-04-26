@@ -1,9 +1,9 @@
 export default class Building {
   constructor(sqft) {
-    this._sqft = sqft;
-    if (this.evacuationWarningMessage === Building.prototype.evacuationWarningMessage) {
+    if (this.constructor !== Building && typeof this.evacuationWarningMessage !== 'function') {
       throw new Error('Class extending Building must override evacuationWarningMessage');
     }
+    this._sqft = sqft;
   }
 
   // Getter for sqft
@@ -11,5 +11,7 @@ export default class Building {
     return this._sqft;
   }
 
-  // Abstract method to be implemented by subclasses
+  set sqft(value) {
+    this._sqft = value;
+  }
 }
