@@ -13,13 +13,6 @@ export default function createInt8TypedArray(length, position, value) {
   // Set the value at the specified position
   int8Array[position] = value;
 
-  // Return the ArrayBuffer
-  const dataview = {
-    DataView: {
-      bytelength: buffer.byteLength,
-      byteOffset: position,
-      buffer,
-    },
-  };
-  return dataview;
+  // Return the Int8Array itself for direct manipulation and testing
+  return int8Array;
 }
