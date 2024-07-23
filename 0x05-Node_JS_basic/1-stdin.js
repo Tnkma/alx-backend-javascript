@@ -1,22 +1,13 @@
-const process = require('process');
-const tty = require('tty');
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
-const welcomeMessage = 'Welcome to Holberton School, what is your name?\n';
-const closeMessage = 'This important software is now closing\n';
+process.stdin.on('readable', () => {
+  const getData = process.stdin.read();
 
-const isInput = tty.isatty(process.stdin.fd);
+  if (getData) {
+    process.stdout.write(`Your name is: ${getData}`);
+  }
+});
 
-const main = () => {
-  process.stdout.write(welcomeMessage);
-  process.stdin.on('data', (data) => {
-    console.log(`Your name is: ${data.toString().trim()}`);
-    if (!isInput) {
-      process.stdout.write(closeMessage);
-    }
-    process.exit(0);
-  });
-};
-
-main();
-
-module.exports = main;
+process.stdin.on('end', () => {
+  process.stdout.write('This important software is now closing\n');
+});
