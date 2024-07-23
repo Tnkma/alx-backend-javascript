@@ -2,8 +2,8 @@ export default function cleanSet(set, startString) {
   // Initialize an empty array to hold the modified set values
   const result = [];
 
-  // Check if the startString is empty, return an empty string if true
-  if (!startString) {
+  // Check if startString is not a string or if it is an empty string, return an empty string
+  if (typeof startString !== 'string' || startString === '') {
     return '';
   }
 
