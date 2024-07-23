@@ -8,7 +8,6 @@ export default function updateStudentGradeByCity(studentIds, city, newGrades) {
 
   // Filter students by the specified city
   const studentsInCity = students.filter((student) => student.location === city);
-  console.log(studentsInCity);
 
   // Map through the students in the city and update their grades
   const updatedStudents = studentsInCity.map((student) => {
