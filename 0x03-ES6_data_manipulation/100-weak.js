@@ -2,7 +2,7 @@
 export const weakMap = new WeakMap();
 
 // Export a new function named queryAPI
-export default function queryAPI(endpoint) {
+export function queryAPI(endpoint) {
   // Check if the endpoint is already in the weakMap
   if (weakMap.has(endpoint)) {
     // Get the current count
