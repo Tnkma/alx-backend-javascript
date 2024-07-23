@@ -6,7 +6,7 @@ const process = require('process');
 const tty = require('tty');
 
 const welcomeMessage = 'Welcome to Holberton School, what is your name? \n';
-const closeMessage = 'This important software is now closing\n';
+const closeMessage = 'This important software is now closing';
 
 const isInput = tty.isatty(process.stdin.fd);
 
